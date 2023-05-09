@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /away
+Sitemap: https://key-hub.eu/sitemap.xml
