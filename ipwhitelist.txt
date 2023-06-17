@@ -1,3 +1,4 @@
 #Add ASN or IP to the list that is being incorrectly detected as a proxy
 TRITEL-MSK-204161
 SM Ltd
+COSMONOVA-AS
