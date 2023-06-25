@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Keyhub Maintanance</title>
+    <meta name="description" content="Page not found">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="https://key-hub.eu/img/favicon.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://key-hub.eu/css/style.css">
+</head>
+
+<body>
+    <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+
+    <!-- header-start -->
+    <header>
+            <div class="header-area">
+                <div id="sticky-header" class="main-header-area sticky">
+                    <div class="container-fluid p-0">
+                        <div class="row align-items-center no-gutters">
+							<div class="col-xl-5 col-lg-5">
+                                <div class="main-menu  d-none d-lg-block">
+                                    <nav>
+                                        <ul id="navigation">
+                                            <li><a  href="/">Home</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                            <div class="col-xl-2 col-lg-2">
+                                <div class="logo-img">
+                                    <a href="/">
+                                        <img src="https://key-hub.eu/img/logo.png" alt="">
+                                    </a>
+                                </div>
+                            </div>  
+                            <div class="col-12">
+                                <div class="mobile_menu d-block d-lg-none"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- header-end -->
+
+		<!-- Text Box -->
+		<div id="mainArticleSection" class="container">
+			<div class="row">
+				<div class="col-sm-12">
+					<h1 class="textArticleHeader text-center">SERVICE UNAVAILABLE - 503</h1>
+					<p class="text-center">
+					Keyhub servers are currently under maintanance. Please check back later.
+					</p>
+				</div>
+			</div>
+		</div>
+    <!-- JS here -->
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://key-hub.eu/js/jquery.slicknav.min.js"></script>
+	<script>
+	$(document).ready(function(){
+		// mobile_menu
+		var menu = $('ul#navigation');
+		if(menu.length){
+			menu.slicknav({
+				prependTo: ".mobile_menu",
+				closedSymbol: '+',
+				openedSymbol:'-'
+			});
+		};
+		});
+	</script>
+</body>
+
+</html>
