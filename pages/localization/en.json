@@ -1,7 +1,5 @@
 {
-	"ADBLOCK_NOTICE": "Please disable your Adblocker to access this website! Without advertising revenue, we can not continue to serve you fantastic free Steam keys. Thank you for understanding!",
 	"VPN_NOTICE": "Using a VPN is not allowed to access this website! Thank you for understanding!",
-	"PROMO_US": "Sorry, this giveaway is only available in North America! If you think this is an error, join our Discord server to contact support, and we will gladly assist you with your issue.",
 	"NETWORK_ERR": "We have experienced an error here! Please wait for a while to try verifying again.",
 	"LEVEL_ERR": "We have failed to retrieve your Steam Level! Please click <a href=\"?refreshLvl=1\" style=\"color: black;\">here</a> to refresh it.",
 	"LEVEL_ERR2": "Check that your Steam profile is Public, and then try again in five minutes. <a href=\"?refreshLvl=1\" style=\"color: black;\">Refresh Level</a>",
@@ -32,7 +30,6 @@
 	"ABOUT_PAR4": "You are always welcome, and we hope you enjoy our giveaway project! ",
 	"DROPS_NEXT": "The Next Drop Will Happen In:",
 	"DROPS_CLAIM": "Claim Key",
-	"DROPS_SUPP": "Clicking on a single advertisement will help us greatly and only takes just a second. Thank you for supporting us!",
 	"DROPS_FEED": "Don't forget to review the key <a href=\"/drops?postStatus=true\" target=\"_blank\" style=\"color: #fd8500;\">HERE</a>! Otherwise, you will not be able to participate in future key drops!",
 	"DROPS_DONATE": "Donate",
 	"DROPS_WARN": "Warning! Posting invalid Steam keys will result in consequences. You don't need to donate any Steam keys to claim keys from giveaways, nor do donators get any advantage from donating Steam keys.",
