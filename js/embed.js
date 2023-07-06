@@ -16,7 +16,7 @@ document.currentScript.parentNode.appendChild(iframe);
 // Function to handle the height request
 function handleMessage(event) {
   if (!isNaN(event.data)) {
-	iframe.height = event.data + 5;
+	iframe.height = event.data;
   }
 }
 
