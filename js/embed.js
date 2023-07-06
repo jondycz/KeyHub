@@ -10,6 +10,9 @@ iframe.src = 'https://key-hub.eu/giveaway/' + gid;
 // Set the width of the iframe
 iframe.style.width = width + 'px';
 
+// Set the height of the iframe
+iframe.height = '0px';
+
 // Append the iframe to the current element
 document.currentScript.parentNode.appendChild(iframe);
 
