@@ -869,3 +869,46 @@ img{
     background: black;
     background:-webkit-gradient(linear, 0 0, 100% 0, from(#0a0a0c), to(#0a0a0c), color-stop(50%, #fd8500));
 }
+.sexy_line{
+    margin:25px 0;
+    height:1px;
+    background:#000;
+    background:-webkit-gradient(linear,0 0,100% 0,from(#0a0a0c),to(#0a0a0c),color-stop(50%,#fd8500))
+}
+ins.adsbygoogle[data-ad-status=unfilled]{
+    display:none!important
+}
+.fa-check-circle{
+    color:green
+}
+.fa-times-circle{
+    color:red
+}
+.profilekey{
+    border:0;
+    filter:blur(3px)
+}
+.profilekey:active,.profilekey:hover{
+    filter:blur(0)
+}
+@media only screen and (max-width:767px){
+    .countdown{
+        font-size:4em!important
+    }
+    .skey{
+        font-size:2em!important
+    }
+}
+.gaTable .row:nth-child(2n){
+    background-color:#0a0a0c
+}
+.gaTable .row:nth-child(odd){
+    background-color:#202227
+}
+.friendPlayerLevel{
+    height:32px;
+    width:32px
+}
+.keylist.reduced>div:nth-child(n+13){
+    display:none
+}
