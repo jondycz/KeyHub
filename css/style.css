@@ -913,3 +913,7 @@ ins.adsbygoogle[data-ad-status=unfilled]{
 .keylist.reduced>div:nth-child(n+13){
     display:none
 }
+.numOfSelTasks{
+    display: inline-block;
+    width: 2ch;
+}
