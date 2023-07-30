@@ -19,7 +19,8 @@ body{
     font-family:-apple-system,BlinkMacSystemFont,montserrat,Roboto,"Segoe UI","Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
     min-height:100vh;
     display:flex;
-    flex-direction:column
+    flex-direction:column;
+    overflow-x:hidden
 }
 .img{
     max-width:100%;
