@@ -15,15 +15,19 @@ function PushNotifSubscribe(){
 	  setTokenSentToServer(false);
 	});	
 }
+function fragmentURL(url){
+	return new URL(url).pathname.split('/').filter(segment => segment !== '');
+}
 function getPageName(url){
-    return new URL(url).pathname.split('/').filter(segment => segment !== '')[0];
+	return fragmentURL(url)[0];
 }
 function getGiveawayId(url){
-    return new URL(url).pathname.split('/').filter(segment => segment !== '')[2];
+	return fragmentURL(url)[1];
 }
-function paintContributors() {
-    let wrapper = document.querySelectorAll(".githubcontributors");
-    fetch('https://api.github.com/repos/jondycz/keyhub/contributors?page=1&per_page=250')
+(function paintContributors() {
+	let wrapper = document.querySelectorAll(".githubcontributors");
+	if (!wrapper.length) return;
+	fetch('https://api.github.com/repos/jondycz/keyhub/contributors?page=1&per_page=250')
 	.then(response => response.json())
 	.then(data => {
 		data.forEach(val => {
@@ -32,7 +36,7 @@ function paintContributors() {
 			});
 		});
 	});
-}
+})();
 function loginWithSteam(){
 	var loginLink = '/connect/steam?return=' + encodeURIComponent(location.pathname);
 	if (window.self !== window.top) {
