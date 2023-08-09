@@ -54,6 +54,9 @@ function loginWithSteam(){
 		location.href = loginLink;
 	}
 }
+function isLoggedIn(){
+	return (document.querySelector("#logout") !== null);
+}
 //END: Front page code
 
 //START: Giveaway page code
@@ -112,23 +115,20 @@ function VerifyTasks(link, token = 0){
 	 });	
 }
 
-function keysleft(){
-	 $.ajax({
-		 type: "GET",
-		 url: 'https://api.key-hub.eu/?type=giveawaycount&data='+parseInt(getGiveawayId(window.location.href)),
-		 success: function (data) {
-			$('#keysleft').html(data);
-			if(data != 0){
-				setTimeout(function(){ keysleft(); }, 5000);
-			}
-		 },
-		 dataType: "json"
-	 });
+function keysleft() {
+	fetch('https://api.key-hub.eu/?type=giveawaycount&data=' + parseInt(getGiveawayId(window.location.href)))
+	.then(response => response.json())
+	.then(data => {
+		document.getElementById('keysleft').innerHTML = data;
+		if (data !== 0) {
+			setTimeout(keysleft, 5000);
+		}
+	});
 }
 
 if(getPageName(window.location.href) === "giveaway"){
 	setTimeout(function(){ keysleft(); }, 5000);
-	if($("#logout").length != 0 && typeof VPNcheck == 'function'){
+	if(isLoggedIn() && typeof VPNcheck == 'function'){
 		VPNcheck();
 	}
 }
@@ -262,21 +262,14 @@ function ClaimKeyDrop(event){
 			 data: {'claim': '1'},							 
 			 success: function (data) {
 				if(data["success"] != null){
-					//neco dobre
 					document.getElementById("skeymsg").innerText = data["success"];
 					document.getElementById("skeymsg").style.backgroundColor = "green";
 					document.getElementById("skeymsg").style.display = "block";
 				}
 				if(data["error"] != null){
-					//neco spatne
 					document.getElementById("skeymsg").innerText = data["error"];
 					document.getElementById("skeymsg").style.backgroundColor = "red";
 					document.getElementById("skeymsg").style.display = "block";
-					/*if(data["error"] != "You have to rate your previous key before you can claim another"){
-						if(data["error"] != "Sorry Drop isnt yet active, click fast!"){
-							setTimeout(function(){ location.reload(); }, 3000);
-						}
-					}*/
 					if (typeof window.keyClaimed === 'undefined') {
 						if(data["error"] != "Sorry Drop isnt yet active, click fast!"){
 							setTimeout(function(){ location.reload(); }, 3000);
@@ -284,7 +277,6 @@ function ClaimKeyDrop(event){
 					}
 				}
 				if(data["skey"] != null){
-					//dej klic
 					document.getElementById("skey").innerText = data["skey"];
 					document.getElementById("feedbackalert").style.display = "block";
 					document.getElementById("skeyc").style.display = "none";
