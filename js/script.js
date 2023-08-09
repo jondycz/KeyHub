@@ -24,7 +24,7 @@ function getPageName(url){
 function getGiveawayId(url){
 	return fragmentURL(url)[1];
 }
-(async () => {
+async function paintContributors() {
 	let wrapper = document.querySelectorAll(".githubcontributors");
 	if (!wrapper.length) return;
 	fetch('https://api.github.com/repos/jondycz/keyhub/contributors?page=1&per_page=250')
@@ -36,7 +36,16 @@ function getGiveawayId(url){
 			});
 		});
 	});
-})();
+}
+async function paintSeasonalLogo() {
+	let logoUrl = '/img/logos/' + (new Date()).toLocaleDateString('en-US', { month: '2-digit', day: '2-digit' }).replace('/', '') + ".svg";
+	fetch(logoUrl)
+	.then((response) => {
+		if (response.ok) {
+			document.querySelector(".logo-img > a > img").src = logoUrl;
+		}
+	});
+}
 function loginWithSteam(){
 	var loginLink = '/connect/steam?return=' + encodeURIComponent(location.pathname);
 	if (window.self !== window.top) {
@@ -367,14 +376,6 @@ window.onload = function() {
 			window.location.href = '?lang=' + this.value + "#languageSelect";
 		});
 	}
-	//holiday logo
-	(async  () => {
-		let logoUrl = '/img/logos/' + (new Date()).toLocaleDateString('en-US', { month: '2-digit', day: '2-digit' }).replace('/', '') + ".svg";
-		fetch(logoUrl)
-		.then((response) => {
-			if (response.ok) {
-				document.querySelector(".logo-img > a > img").src = logoUrl;
-			}
-		});
-	})();
+	paintContributors();
+	paintSeasonalLogo();
 };
