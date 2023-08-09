@@ -24,7 +24,7 @@ function getPageName(url){
 function getGiveawayId(url){
 	return fragmentURL(url)[1];
 }
-(function paintContributors() {
+(async () => {
 	let wrapper = document.querySelectorAll(".githubcontributors");
 	if (!wrapper.length) return;
 	fetch('https://api.github.com/repos/jondycz/keyhub/contributors?page=1&per_page=250')
