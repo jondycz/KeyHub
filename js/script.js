@@ -369,13 +369,6 @@ window.onload = function() {
 			openedSymbol:'-'
 		});
 	};
-	//language selection
-	var languageSelect = document.getElementById('languageSelect');
-	if (languageSelect) {
-		languageSelect.addEventListener('change', function() {
-			window.location.href = '?lang=' + this.value + "#languageSelect";
-		});
-	}
 	paintContributors();
 	paintSeasonalLogo();
 };
