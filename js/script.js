@@ -18,15 +18,19 @@ function PushNotifSubscribe(){
 function getPageName(url){
     return new URL(url).pathname.split('/').filter(segment => segment !== '')[0];
 }
-function paintContributors(wrapperId){
-	$.ajax({
-		url: 'https://api.github.com/repos/jondycz/keyhub/contributors?page=1&per_page=250',
-		dataType: 'jsonp',
-		success: function(data) {
-			$.each(data.data, function(key, val) {
-				wrapperId.append('<a href="' + val.html_url + '" target="_blank" title="' + val.login + '"><img src="' + val.avatar_url + '&s=64" alt="' + val.login + '" width="64" height="64" style="margin:5px;" loading="lazy" /></a>');
+function getGiveawayId(url){
+    return new URL(url).pathname.split('/').filter(segment => segment !== '')[2];
+}
+function paintContributors() {
+    let wrapper = document.querySelectorAll(".githubcontributors");
+    fetch('https://api.github.com/repos/jondycz/keyhub/contributors?page=1&per_page=250')
+	.then(response => response.json())
+	.then(data => {
+		data.forEach(val => {
+			wrapper.forEach(element => {
+				element.insertAdjacentHTML('beforeend', '<a href="' + val.html_url + '" target="_blank" title="' + val.login + '"><img src="' + val.avatar_url + '&s=64" alt="' + val.login + '" width="64" height="64" style="margin:5px;" loading="lazy" /></a>');
 			});
-		}
+		});
 	});
 }
 function loginWithSteam(){
@@ -98,7 +102,7 @@ function VerifyTasks(link, token = 0){
 function keysleft(){
 	 $.ajax({
 		 type: "GET",
-		 url: 'https://api.key-hub.eu/?type=giveawaycount&data='+parseInt(window.location.pathname.split("/")[2]),
+		 url: 'https://api.key-hub.eu/?type=giveawaycount&data='+parseInt(getGiveawayId(window.location.href)),
 		 success: function (data) {
 			$('#keysleft').html(data);
 			if(data != 0){
