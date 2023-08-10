@@ -79,11 +79,6 @@ label{
     color:#fff;
     text-shadow:none
 }
-::-moz-selection{
-    background:#fd8500;
-    color:#fff;
-    text-shadow:none
-}
 ::selection{
     background:#fd8500;
     color:#fff;
@@ -99,15 +94,13 @@ label{
     font-size:14px;
     opacity:1
 }
-::-ms-input-placeholder{
-    color:#fd8500;
-    font-size:14px;
-    opacity:1
-}
 ::placeholder{
     color:#fd8500;
     font-size:14px;
     opacity:1
+}
+input.form-control.text-white::placeholder {
+    color: #ababab!important
 }
 h3{
     font-size:24px
