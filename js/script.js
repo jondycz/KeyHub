@@ -234,13 +234,16 @@ function paintDropsAlert(data){
 	document.getElementById("skeymsg").style.backgroundColor = (data["success"]) ? "green" : "red";
 	document.getElementById("skeymsg").style.display = "block";	
 }
+function sendFormData(url, dataObject) {
+    return fetch(url, {
+        method: 'POST',
+        body: Object.entries(dataObject).reduce((formData, [key, value]) => (formData.append(key, value), formData), new FormData())
+    })
+    .then(response => response.json());
+}
 function Donate(token){
 	var key = document.getElementById('Donkey').value;
-	fetch('/drops', {
-  		method: 'POST',
-  		body: (() => { const formData = new FormData(); formData.append('donate', '1'); formData.append('key', key); return formData; })()
-	})
-	.then(response => response.json())
+	sendFormData('/drops', {donate: '1',key})
   	.then(data => {
     		paintDropsAlert(data);
   	});
@@ -249,11 +252,7 @@ function Donate(token){
 function ClaimKeyDrop(event){
 	if(event.isTrusted){
 		document.getElementById("skeyc").disabled = true;
-		fetch('/drops', {
-			method: 'POST',
-			body: (() => { const formData = new FormData(); formData.append('claim', 1); return formData; })()
-		})
-		.then(response => response.json())
+		sendFormData('/drops', {claim: '1'})
 		.then(data => {
 			paintDropsAlert(data);
 			if(data["error"] != null){
@@ -311,11 +310,7 @@ function updateDropsClock(timestamp){
 	}, 100)
 }
 function KeyFeedback(option){
-	fetch('/drops', {
-  		method: 'POST',
-  		body: (() => { const formData = new FormData(); formData.append('postStatus', option); return formData; })()
-	})
-	.then(response => response.json())
+	sendFormData('/drops', {postStatus: option})
   	.then(data => {
     		paintDropsAlert(data);
   	});
