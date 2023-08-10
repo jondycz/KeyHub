@@ -238,6 +238,9 @@ function Donate(token){
 	var key = document.getElementById('Donkey').value;
 	fetch('/drops', {
   		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json'
+		},
   		body: "{'donate': '1','key': key}"
 	})
 	.then(response => response.json())
@@ -251,6 +254,9 @@ function ClaimKeyDrop(event){
 		document.getElementById("skeyc").disabled = true;
 		fetch('/drops', {
 			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
 			body: "{'claim': '1'}"
 		})
 		.then(response => response.json())
@@ -313,6 +319,9 @@ function updateDropsClock(timestamp){
 function KeyFeedback(option){
 	fetch('/drops', {
   		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json'
+		},
   		body: "{'postStatus': option}"
 	})
 	.then(response => response.json())
