@@ -238,10 +238,7 @@ function Donate(token){
 	var key = document.getElementById('Donkey').value;
 	fetch('/drops', {
   		method: 'POST',
-		headers: {
-			'Content-Type': 'application/json'
-		},
-  		body: "{'donate': '1','key': key}"
+  		body: (() => { const formData = new FormData(); formData.append('donate', '1'); formData.append('key', key); return formData; })()
 	})
 	.then(response => response.json())
   	.then(data => {
@@ -254,10 +251,7 @@ function ClaimKeyDrop(event){
 		document.getElementById("skeyc").disabled = true;
 		fetch('/drops', {
 			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json'
-			},
-			body: "{'claim': '1'}"
+			body: new FormData().append('claim', 1)
 		})
 		.then(response => response.json())
 		.then(data => {
@@ -319,10 +313,7 @@ function updateDropsClock(timestamp){
 function KeyFeedback(option){
 	fetch('/drops', {
   		method: 'POST',
-		headers: {
-			'Content-Type': 'application/json'
-		},
-  		body: "{'postStatus': option}"
+  		body: new FormData().append('postStatus', option)
 	})
 	.then(response => response.json())
   	.then(data => {
