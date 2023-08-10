@@ -229,64 +229,49 @@ function onPlayerReady(event) {
 //END: Giveaway page code
 
 //START: Drops page code
+function paintDropsAlert(data){
+	document.getElementById("skeymsg").innerText = data["success"] ?? data["error"];
+	document.getElementById("skeymsg").style.backgroundColor = (data["success"]) ? "green" : "red";
+	document.getElementById("skeymsg").style.display = "block";	
+}
 function Donate(token){
 	var key = document.getElementById('Donkey').value;
-	 $.ajax({   
-		 type: "POST",
-		 url: '/drops',
-		 data: {'donate': '1','key': key},						 
-		 success: function (data) {
-			if(data["success"] != null){
-				//neco dobre
-				document.getElementById("skeymsg").innerText = data["success"];
-				document.getElementById("skeymsg").style.backgroundColor = "green";
-				document.getElementById("skeymsg").style.display = "block";
-			}
-			if(data["error"] != null){
-				//neco spatne
-				document.getElementById("skeymsg").innerText = data["error"];
-				document.getElementById("skeymsg").style.backgroundColor = "red";
-				document.getElementById("skeymsg").style.display = "block";
-			}
-		 },
-		 dataType: "json"
-	 });
+	fetch('/drops', {
+  		method: 'POST',
+  		body: "{'donate': '1','key': key}"
+	})
+	.then(response => response.json())
+  	.then(data => {
+    		paintDropsAlert(data);
+  	});
 	window.scrollTo(0, 0);						 
 }
 function ClaimKeyDrop(event){
 	if(event.isTrusted){
 		document.getElementById("skeyc").disabled = true;
-		 $.ajax({  
-			 type: "POST",
-			 url: '/drops',
-			 data: {'claim': '1'},							 
-			 success: function (data) {
-				if(data["success"] != null){
-					document.getElementById("skeymsg").innerText = data["success"];
-					document.getElementById("skeymsg").style.backgroundColor = "green";
-					document.getElementById("skeymsg").style.display = "block";
-				}
-				if(data["error"] != null){
-					document.getElementById("skeymsg").innerText = data["error"];
-					document.getElementById("skeymsg").style.backgroundColor = "red";
-					document.getElementById("skeymsg").style.display = "block";
-					if (typeof window.keyClaimed === 'undefined') {
-						if(data["error"] != "Sorry Drop isnt yet active, click fast!"){
-							setTimeout(function(){ location.reload(); }, 3000);
-						}
+		fetch('/drops', {
+			method: 'POST',
+			body: "{'claim': '1'}"
+		})
+		.then(response => response.json())
+		.then(data => {
+			paintDropsAlert(data);
+			if(data["error"] != null){
+				if (typeof window.keyClaimed === 'undefined') {
+					if(data["error"] != "Sorry Drop isnt yet active, click fast!"){
+						setTimeout(function(){ location.reload(); }, 3000);
 					}
 				}
-				if(data["skey"] != null){
-					document.getElementById("skey").innerText = data["skey"];
-					document.getElementById("feedbackalert").style.display = "block";
-					document.getElementById("skeyc").style.display = "none";
-					window.keyClaimed = true;
-					clearInterval(ts);
-				}
-				document.getElementById("skeyc").disabled = false;
-			 },
-			 dataType: "json"
-		 });
+			}
+			if(data["skey"] != null){
+				document.getElementById("skey").innerText = data["skey"];
+				document.getElementById("feedbackalert").style.display = "block";
+				document.getElementById("skeyc").style.display = "none";
+				window.keyClaimed = true;
+				clearInterval(ts);
+			}
+			document.getElementById("skeyc").disabled = false;
+		});
 	}else{
 		document.getElementById("skeymsg").innerText = "Something went wrong. Maybe update to a newer browser?";
 		document.getElementById("skeymsg").style.backgroundColor = "red";
@@ -326,26 +311,14 @@ function updateDropsClock(timestamp){
 	}, 100)
 }
 function KeyFeedback(option){
-	 $.ajax({
-		 type: "POST",
-		 url: '/drops',
-		 data: {'postStatus': option},							 
-		 success: function (data) {
-			if(data["success"] != null){
-				//neco dobre
-				document.getElementById("skeymsg").innerText = data["success"];
-				document.getElementById("skeymsg").style.backgroundColor = "green";
-				document.getElementById("skeymsg").style.display = "block";
-			}
-			if(data["error"] != null){
-				//neco spatne
-				document.getElementById("skeymsg").innerText = data["error"];
-				document.getElementById("skeymsg").style.backgroundColor = "red";
-				document.getElementById("skeymsg").style.display = "block";
-			}
-		 },
-		 dataType: "json"
-	 });
+	fetch('/drops', {
+  		method: 'POST',
+  		body: "{'postStatus': option}"
+	})
+	.then(response => response.json())
+  	.then(data => {
+    		paintDropsAlert(data);
+  	});
 	setTimeout(function(){ window.location.href = "/drops"; }, 1500);
 }
 //END: Drops page code
