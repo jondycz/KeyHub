@@ -618,11 +618,6 @@ img{
     height:120%;
     z-index:1
 }
-.keylist>div[class*=col-]{
-    display:flex;
-    flex:1 0 auto;
-    margin-bottom:30px
-}
 .slicknav_btn{
     position:relative;
     display:block;
