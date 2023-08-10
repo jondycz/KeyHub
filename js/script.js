@@ -57,6 +57,9 @@ function loginWithSteam(){
 function isLoggedIn(){
 	return (document.querySelector("#logout") !== null);
 }
+function redeemSteamKey(key){
+	window.open('https://store.steampowered.com/account/registerkey?key='+key, '_blank');
+}
 //END: Front page code
 
 //START: Giveaway page code
