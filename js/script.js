@@ -83,7 +83,6 @@ function VerifyTasks(link, token = 0){
 				if(data['success'] != null){
 					if(data['success'] == true){
 						document.getElementById("keybox").setAttribute("value", data["message"]);
-						document.getElementById("keybutton").setAttribute("onclick", "window.open('https://store.steampowered.com/account/registerkey?key="+data["message"]+"', '_blank');");
 						document.getElementById("keygroup").style.display = "contents";
 						document.getElementById("verifybox").style.display = "none";
 						$('#keysleft').html(($('#keysleft').text())-1);
