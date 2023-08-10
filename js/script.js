@@ -251,7 +251,7 @@ function ClaimKeyDrop(event){
 		document.getElementById("skeyc").disabled = true;
 		fetch('/drops', {
 			method: 'POST',
-			body: new FormData().append('claim', 1)
+			body: (() => { const formData = new FormData(); formData.append('claim', 1); return formData; })()
 		})
 		.then(response => response.json())
 		.then(data => {
@@ -313,7 +313,7 @@ function updateDropsClock(timestamp){
 function KeyFeedback(option){
 	fetch('/drops', {
   		method: 'POST',
-  		body: new FormData().append('postStatus', option)
+  		body: (() => { const formData = new FormData(); formData.append('postStatus', option); return formData; })()
 	})
 	.then(response => response.json())
   	.then(data => {
