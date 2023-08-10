@@ -99,7 +99,7 @@ label{
     font-size:14px;
     opacity:1
 }
-input.form-control.text-white::placeholder {
+input.text-white::placeholder {
     color: #ababab!important
 }
 h3{
