@@ -1,20 +1,4 @@
 //START: Front page code
-function PushNotifSubscribe(){
-	//firebase notification
-	messaging.getToken().then((currentToken) => {
-	  if (currentToken) {
-		sendTokenToServer(currentToken);
-	  } else {
-		// Show permission request.
-		console.log('No Instance ID token available. Request permission to generate one.');
-		// Show permission UI.
-		setTokenSentToServer(false);
-	  }
-	}).catch((err) => {
-	  console.log('An error occurred while retrieving token. ', err);
-	  setTokenSentToServer(false);
-	});	
-}
 function fragmentURL(url){
 	return new URL(url).pathname.split('/').filter(segment => segment !== '');
 }
