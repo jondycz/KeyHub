@@ -275,7 +275,9 @@ function timestamptotime(timestamp, ts){
 		second = Math.floor((timestamp % 3600)%60);
 		document.getElementById("countdown").innerText = hour + " : " + ('0' + minute).slice(-2) + " : " + ('0' + second).slice(-2);	
 	}else{
-		clearInterval(ts);
+		if(typeof ts !== 'undefined'){
+			clearInterval(ts);
+		}
 	}
 	if(timestamp <= 5){
 		if(document.getElementById("skey").innerText != "Sorry, no keys left, check back later"){
@@ -287,7 +289,7 @@ function timestamptotime(timestamp, ts){
 function updateDropsClock(timestamp){
 	timestamp = Math.round(timestamp - (document.timeline.currentTime / 1000));
 	var timestamp2 = Math.floor(Date.now() / 1000) + timestamp;
-	//timestamptotime(timestamp);
+	timestamptotime(timestamp);
 	var ts = setInterval(function(){
 		if(timestamp != remainingTime(timestamp2)){
 			timestamp = remainingTime(timestamp2);
