@@ -266,7 +266,7 @@ function ClaimKeyDrop(event){
 function remainingTime(timestamp2){
 	return (timestamp2 - Math.floor(Date.now() / 1000));
 }
-function timestamptotime(timestamp){
+function timestamptotime(timestamp, ts){
 	var hour, minute, second;
 	hour = minute = second = 0;
 	if(timestamp >= 0){
@@ -291,7 +291,7 @@ function updateDropsClock(timestamp){
 	var ts = setInterval(function(){
 		if(timestamp != remainingTime(timestamp2)){
 			timestamp = remainingTime(timestamp2);
-			timestamptotime(timestamp);								
+			timestamptotime(timestamp, ts);								
 		}
 	}, 100)
 }
