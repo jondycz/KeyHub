@@ -287,7 +287,7 @@ function timestamptotime(timestamp){
 function updateDropsClock(timestamp){
 	timestamp = Math.round(timestamp - (document.timeline.currentTime / 1000));
 	var timestamp2 = Math.floor(Date.now() / 1000) + timestamp;
-	timestamptotime(timestamp);
+	//timestamptotime(timestamp);
 	var ts = setInterval(function(){
 		if(timestamp != remainingTime(timestamp2)){
 			timestamp = remainingTime(timestamp2);
