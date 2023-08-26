@@ -10,10 +10,6 @@ var gid = scriptTag.getAttribute('data-gid');
 var iframe = document.createElement('iframe');
 iframe.src = 'https://key-hub.eu/giveaway/' + gid;
 
-// Apply classes and styles
-iframe.style.cssText += styles;
-iframe.classList.add(...(classes || "khembed").split(' '));
-
 // Set the width of the iframe
 iframe.style.width = width + 'px';
 
@@ -26,6 +22,9 @@ scriptTag.insertAdjacentElement('afterend', iframe);
 // Function to handle the height request
 function handleMessage(event) {
   if (!isNaN(event.data)) {
+	// Apply classes and styles
+	iframe.style.cssText += styles;
+	iframe.classList.add(...(classes || "khembed").split(' '));
 	iframe.height = event.data;
   }
 }
