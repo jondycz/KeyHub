@@ -1,11 +1,18 @@
+(function () {
 // Get the attributes from the script tag
 var scriptTag = document.querySelector('script[data-width][data-gid]');
 var width = scriptTag.getAttribute('data-width');
+var classes = scriptTag.getAttribute('data-class');
+var styles = scriptTag.getAttribute('data-style');
 var gid = scriptTag.getAttribute('data-gid');
 
 // Create the iframe
 var iframe = document.createElement('iframe');
 iframe.src = 'https://key-hub.eu/giveaway/' + gid;
+
+// Apply classes and styles
+iframe.style.cssText += styles;
+iframe.classList.add(...classes.split(' '));
 
 // Set the width of the iframe
 iframe.style.width = width + 'px';
@@ -25,3 +32,4 @@ function handleMessage(event) {
 
 // Add event listener for receiving height requests
 window.addEventListener('message', handleMessage, false);
+});
