@@ -11,7 +11,7 @@ var iframe = document.createElement('iframe');
 iframe.src = 'https://key-hub.eu/giveaway/' + gid;
 
 // Set the width of the iframe
-iframe.style.width = width + 'px';
+iframe.width = width;
 
 // Set the height of the iframe
 iframe.height = '0';
