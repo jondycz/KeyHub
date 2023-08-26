@@ -21,7 +21,7 @@ iframe.style.width = width + 'px';
 iframe.height = '0px';
 
 // Append the iframe to the current element
-currentScript.parentNode.appendChild(iframe);
+scriptTag.insertAdjacentElement('afterend', iframe);
 
 // Function to handle the height request
 function handleMessage(event) {
