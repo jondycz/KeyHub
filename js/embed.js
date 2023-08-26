@@ -14,7 +14,7 @@ iframe.src = 'https://key-hub.eu/giveaway/' + gid;
 iframe.style.width = width + 'px';
 
 // Set the height of the iframe
-iframe.height = '0px';
+iframe.height = '0';
 
 // Append the iframe to the current element
 scriptTag.insertAdjacentElement('afterend', iframe);
