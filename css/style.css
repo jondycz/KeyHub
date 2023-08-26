@@ -447,20 +447,15 @@ h3{
     padding-left:0
 }
 .header-area .main-header-area.sticky{
-    box-shadow:0 3px 16px 0 rgba(0,0,0,.1);
     position:fixed;
     width:100%;
-    top:-70px;
+    too:0;
     left:0;
     right:0;
     z-index:99;
-    transform:translateY(70px);
-    transition:transform .5s ease,background .5s ease;
-    -webkit-transition:transform .5s ease,background .5s ease;
-    box-shadow:0 3px 16px 0 rgba(0,0,0,.1);
     padding:0 150px;
     background:RGBA(0,0,0,.85);
-    background:#000000de
+    box-shadow:0 3px 16px 0 rgba(0,0,0,.1);
 }
 @media (max-width:767px){
     .header-area .main-header-area.sticky{
