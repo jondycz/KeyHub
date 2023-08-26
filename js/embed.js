@@ -32,4 +32,4 @@ function handleMessage(event) {
 
 // Add event listener for receiving height requests
 window.addEventListener('message', handleMessage, false);
-});
+})();
