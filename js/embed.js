@@ -24,7 +24,7 @@ iframe.style.cssText += styles;
 iframe.classList.add(...(classes || "khembed").split(' '));
 
 //append attributes to the iframe
-attributes.split(',').forEach((pair) => {
+attributes.split(' ').forEach((pair) => {
   const [attribute, value] = pair.split(':');
   if(attribute.trim().length === 0) return;
   iframe.setAttribute(attribute, value || "");
