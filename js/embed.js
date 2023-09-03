@@ -4,7 +4,7 @@ var scriptTag = document.querySelector('script[data-gid]');
 var width = scriptTag.getAttribute('data-width') || 500;
 var classes = scriptTag.getAttribute('data-class');
 var styles = scriptTag.getAttribute('data-style');
-var attributes = scriptTag.getAttribute('data-attributes'); // "attribute:value,attribute:value,"
+var attributes = scriptTag.getAttribute('data-attributes');
 var gid = scriptTag.getAttribute('data-gid');
 
 // Create the iframe
