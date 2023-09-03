@@ -1,7 +1,7 @@
 (function () {
 // Get the attributes from the script tag
-var scriptTag = document.querySelector('script[data-width][data-gid]');
-var width = scriptTag.getAttribute('data-width');
+var scriptTag = document.querySelector('script[data-gid]');
+var width = scriptTag.getAttribute('data-width') || 500;
 var classes = scriptTag.getAttribute('data-class');
 var styles = scriptTag.getAttribute('data-style');
 var gid = scriptTag.getAttribute('data-gid');
