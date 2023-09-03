@@ -1,11 +1,11 @@
 (function() {
   // Get the attributes from the script tag
   var scriptTag = document.querySelector('script[data-gid]');
-  var width = scriptTag.getAttribute('data-width') || 500;
-  var classes = scriptTag.getAttribute('data-class');
-  var styles = scriptTag.getAttribute('data-style');
-  var attributes = scriptTag.getAttribute('data-attributes');
   var gid = scriptTag.getAttribute('data-gid');
+  var width = scriptTag.getAttribute('data-width') || 500;
+  var classes = scriptTag.getAttribute('data-class') || "khembed";
+  var styles = scriptTag.getAttribute('data-style') || "";
+  var attributes = scriptTag.getAttribute('data-attributes') || "";
 
   // Create the iframe
   var iframe = document.createElement('iframe');
@@ -28,7 +28,7 @@
         iframe.style.cssText += styles;
 
         //append classes of the iframe
-        iframe.classList.add(...(classes || "khembed").split(' '));
+        iframe.classList.add(...classes.split(' '));
 
         //append attributes to the iframe
         attributes.split(',').forEach((pair) => {
