@@ -27,7 +27,7 @@ iframe.classList.add(...(classes || "khembed").split(' '));
 attributes.split(',').forEach((pair) => {
   const [attribute, value] = pair.split(':');
   if(attribute.trim().length === 0) return;
-  iframe.setAttribute(attribute, value);
+  iframe.setAttribute(attribute, value || "");
 });
 
 // Append the iframe to the current element
