@@ -900,6 +900,6 @@ ins.adsbygoogle[data-ad-status=unfilled]{
     display: inline-block;
     width: 2ch;
 }
-.adsbygoogle[data-ad-status*='filled'] ~ a {
+.adsbygoogle[data-adsbygoogle-status*='done'] ~ a {
     display:none;
 }
