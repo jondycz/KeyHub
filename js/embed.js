@@ -37,7 +37,9 @@
           iframe.setAttribute(attribute, value || "");
         });
       }
-      iframe.height = event.data;
+      if(iframe.height !== event.data){
+        iframe.height = event.data;
+      }
     }
   }
 
