@@ -900,6 +900,23 @@ ins.adsbygoogle[data-ad-status=unfilled]{
     display: inline-block;
     width: 2ch;
 }
-.adsbygoogle[data-adsbygoogle-status*='done'] ~ a {
+.adsbygoogle[data-adsbygoogle-status*='done'] ~ a{
     display:none;
+}
+body.framed{
+    overflow:hidden
+}
+body.framed header{
+    display:none
+}
+body.framed footer{
+    display:none
+}
+body.framed .grecaptcha-badge{
+    display:none!important
+}
+body.framed #mainArticleSection{
+    border:0;
+    padding-top:0;
+    margin-bottom:0
 }
