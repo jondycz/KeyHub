@@ -912,6 +912,9 @@ body.framed header{
 body.framed footer{
     display:none
 }
+body.framed .framehidden{
+    display:none
+}
 body.framed .grecaptcha-badge{
     display:none!important
 }
