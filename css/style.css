@@ -105,14 +105,6 @@ input.text-white::placeholder {
 h3{
     font-size:24px
 }
-@media (max-width:767px){
-    .mobile_menu{
-        position:absolute;
-        right:0;
-        width:100%;
-        z-index:9
-    }
-}
 .slicknav_menu .slicknav_nav{
     background:#fff;
     float:right;
@@ -134,11 +126,6 @@ h3{
 }
 .slicknav_menu .slicknav_nav a.active{
     color:#fd8500
-}
-@media (max-width:767px){
-    .slicknav_menu .slicknav_nav a i{
-        display:none
-    }
 }
 @media (min-width:768px) and (max-width:991px){
     .slicknav_menu .slicknav_nav a i{
@@ -164,11 +151,6 @@ h3{
     padding-bottom:3px;
     top:-11px;
     right:-5px
-}
-@media (max-width:767px){
-    .slicknav_menu{
-        margin-right:0
-    }
 }
 .slicknav_nav .slicknav_arrow{
     float:right;
@@ -213,11 +195,6 @@ h3{
     padding:5px;
     top:-31px
 }
-@media (max-width:767px){
-    .header-area{
-        padding-top:0
-    }
-}
 @media (min-width:768px) and (max-width:991px){
     .header-area{
         padding-top:0
@@ -226,12 +203,7 @@ h3{
 .header-area .main-header-area{
     padding:0 150px
 }
-@media (max-width:767px){
-    .header-area .main-header-area{
-        padding:10px 10px
-    }
-}
-@media (min-width:768px) and (max-width:991px){
+@media (max-width:991px){
     .header-area .main-header-area{
         padding:10px 10px
     }
@@ -241,7 +213,7 @@ h3{
         padding:0 20px
     }
 }
-@media (min-width:1200px) and (max-width:1500px){
+@media (min-width:1200px){
     .header-area .main-header-area{
         padding:0 10px
     }
@@ -250,6 +222,21 @@ h3{
     text-align:center
 }
 @media (max-width:767px){
+    .mobile_menu{
+        position:absolute;
+        right:0;
+        width:100%;
+        z-index:9
+    }
+    .slicknav_menu .slicknav_nav a i{
+        display:none
+    }
+    .slicknav_menu{
+        margin-right:0
+    }
+    .header-area{
+        padding-top:0
+    }
     .header-area .main-header-area .logo-img{
         text-align:left
     }
@@ -457,22 +444,12 @@ h3{
     background:RGBA(0,0,0,.85);
     box-shadow:0 3px 16px 0 rgba(0,0,0,.1);
 }
-@media (max-width:767px){
+@media (max-width:992px){
     .header-area .main-header-area.sticky{
         padding:10px 10px
     }
 }
-@media (min-width:768px) and (max-width:991px){
-    .header-area .main-header-area.sticky{
-        padding:10px 10px
-    }
-}
-@media (min-width:992px) and (max-width:1200px){
-    .header-area .main-header-area.sticky{
-        padding:0 20px
-    }
-}
-@media (min-width:1200px) and (max-width:1500px){
+@media (min-width:992px){
     .header-area .main-header-area.sticky{
         padding:0 20px
     }
