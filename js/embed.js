@@ -17,6 +17,9 @@
   // Set the height of the iframe
   iframe.height = '0';
 
+  // Set max width to 100% of available container
+  iframe.style.maxWidth = "100%";
+
   // Append the iframe to the current element
   scriptTag.insertAdjacentElement('afterend', iframe);
 
@@ -25,7 +28,7 @@
     if (!isNaN(event.data)) {
       if (iframe.classList.length === 0) {
         //set styles of the iframe
-        iframe.style.cssText += "max-width:100%;" + styles;
+        iframe.style.cssText += styles;
 
         //append classes of the iframe
         iframe.classList.add(...classes.split(' '));
