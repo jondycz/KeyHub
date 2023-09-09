@@ -127,7 +127,7 @@ h3{
 .slicknav_menu .slicknav_nav a.active{
     color:#fd8500
 }
-@media (min-width:768px) and (max-width:991px){
+@media (min-width:768px) and (max-width:992px){
     .slicknav_menu .slicknav_nav a i{
         display:none
     }
@@ -195,7 +195,7 @@ h3{
     padding:5px;
     top:-31px
 }
-@media (min-width:768px) and (max-width:991px){
+@media (min-width:768px) and (max-width:992px){
     .header-area{
         padding-top:0
     }
@@ -203,7 +203,7 @@ h3{
 .header-area .main-header-area{
     padding:0 150px
 }
-@media (max-width:991px){
+@media (max-width:992px){
     .header-area .main-header-area{
         padding:10px 10px
     }
@@ -221,7 +221,7 @@ h3{
 .header-area .main-header-area .logo-img{
     text-align:center
 }
-@media (max-width:767px){
+@media (max-width:768px){
     .mobile_menu{
         position:absolute;
         right:0;
@@ -241,7 +241,7 @@ h3{
         text-align:left
     }
 }
-@media (min-width:768px) and (max-width:991px){
+@media (min-width:768px) and (max-width:992px){
     .header-area .main-header-area .logo-img{
         text-align:left
     }
@@ -251,12 +251,7 @@ h3{
         text-align:left
     }
 }
-@media (max-width:767px){
-    .header-area .main-header-area .logo-img img{
-        width:70px
-    }
-}
-@media (min-width:768px) and (max-width:991px){
+@media (max-width:992px){
     .header-area .main-header-area .logo-img img{
         width:70px
     }
