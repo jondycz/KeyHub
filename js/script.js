@@ -105,9 +105,9 @@ function keysleft() {
 	fetch('https://api.key-hub.eu/?type=giveawaycount&data=' + parseInt(getGiveawayId(window.location.href)))
 	.then(response => response.json())
 	.then(data => {
-		let countWrapper = document.getElementById('keysleft').innerHTML;
+		let countWrapper = document.getElementById('keysleft');
 		if (countWrapper > data.data){
-			countWrapper = data.data;
+			countWrapper.innerHTML = data.data;
 		}
 		if (data !== 0) {
 			setTimeout(keysleft, 5000);
