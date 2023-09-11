@@ -5,3 +5,4 @@ COSMONOVA-AS
 SkyNet Networks
 Alexey Geiner
 Meganet
+Toya:net
