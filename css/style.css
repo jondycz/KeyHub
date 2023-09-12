@@ -20,7 +20,8 @@ body{
     min-height:100vh;
     display:flex;
     flex-direction:column;
-    overflow-x:hidden
+    overflow-x:hidden;
+    width:100vw
 }
 .img{
     max-width:100%;
