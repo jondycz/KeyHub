@@ -21,6 +21,7 @@ body{
     background-color:#202227;
     font-family:-apple-system,BlinkMacSystemFont,montserrat,Roboto,"Segoe UI","Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
     min-height:100vh;
+    padding-bottom:0px!important;
     display:flex;
     flex-direction:column;
 }
