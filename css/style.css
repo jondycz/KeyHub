@@ -12,6 +12,9 @@
     -ms-flex-pack:start;
     justify-content:start
 }
+html, body{
+    overflow-x:hidden;
+}
 body{
     font-weight:400;
     font-style:normal;
@@ -20,8 +23,6 @@ body{
     min-height:100vh;
     display:flex;
     flex-direction:column;
-    overflow-x:hidden;
-    width:100vw
 }
 .img{
     max-width:100%;
