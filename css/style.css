@@ -13,6 +13,7 @@
     justify-content:start
 }
 html, body{
+    height:100vh;
     overflow-x:hidden;
 }
 body{
@@ -432,7 +433,6 @@ h3{
     padding-left:0
 }
 .header-area .main-header-area.sticky{
-    position:fixed;
     width:100%;
     top:0;
     left:0;
