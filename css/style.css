@@ -871,7 +871,7 @@ ins.adsbygoogle[data-ad-status=unfilled]{
 .adsbygoogle[data-adsbygoogle-status*='done'] ~ a{
     display:none;
 }
-body.framed{
+html:has(body.framed), body.framed{
     overflow:hidden
 }
 body.framed header{
