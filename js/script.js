@@ -106,7 +106,7 @@ function keysleft() {
 	.then(response => response.json())
 	.then(data => {
 		let countWrapper = document.getElementById('keysleft');
-		if (countWrapper > data.data){
+		if (Number(countWrapper.innerHTML) > data.data){
 			countWrapper.innerHTML = data.data;
 		}
 		if (data !== 0) {
