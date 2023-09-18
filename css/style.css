@@ -12,8 +12,10 @@
     -ms-flex-pack:start;
     justify-content:start
 }
+html, body{
+    overflow-x:clip;
+}
 body{
-    overflow-x:hidden;
     font-weight:400;
     font-style:normal;
     background-color:#202227;
