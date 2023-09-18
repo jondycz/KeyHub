@@ -12,11 +12,8 @@
     -ms-flex-pack:start;
     justify-content:start
 }
-html, body{
-    height:100vh;
-    overflow-x:hidden;
-}
 body{
+    overflow-x:hidden;
     font-weight:400;
     font-style:normal;
     background-color:#202227;
