@@ -481,7 +481,6 @@ h3{
     border-top:0;
     border-radius:5px;
     color:#fff;
-    padding-top:150px;
     background-color:RGBA(0,0,0,.85);
     background-color:#000000b2;
     overflow-wrap:break-word;
@@ -496,11 +495,6 @@ h3{
 @media (min-width:992px){
     .mobile_only{
         display:none!important
-    }
-}
-@media (max-width:991px){
-    #mainArticleSection{
-        padding-top:80px
     }
 }
 footer{
@@ -895,6 +889,5 @@ body.framed .grecaptcha-badge{
 }
 body.framed #mainArticleSection{
     border:0;
-    padding-top:0;
     margin-bottom:0
 }
