@@ -1,17 +1,6 @@
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6,.btn{
     font-weight: 600;
 }
-.flex-center-start{
-    display:-webkit-box;
-    display:-ms-flexbox;
-    display:flex;
-    -webkit-box-align:center;
-    -ms-flex-align:center;
-    align-items:center;
-    -webkit-box-pack:start;
-    -ms-flex-pack:start;
-    justify-content:start
-}
 html, body{
     overflow-x:clip;
 }
@@ -56,13 +45,6 @@ a,button{
 }
 h1 a,h2 a,h3 a,h4 a,h5 a,h6 a{
     color:inherit;
-}
-#navigation{
-    margin:0;
-    padding:0
-}
-#navigation li{
-    list-style:none
 }
 p{
     font-size:16px;
@@ -110,13 +92,7 @@ h3{
 }
 .slicknav_menu .slicknav_nav{
     background:#fff;
-    float:right;
-    margin-top:0;
-    padding:0;
     width:95%;
-    padding:0;
-    border-radius:0;
-    margin-top:5px;
     position:absolute;
     left:0;
     right:0;
@@ -171,31 +147,7 @@ h3{
     border-radius:3px;
     top:5px;
     padding:5px;
-    top:-31px
-}
-.slicknav_btn{
-    background-color:transparent;
-    cursor:pointer;
-    margin-bottom:10px;
-    position:relative;
-    z-index:99;
-    border:none;
-    border-radius:3px;
-    top:5px;
-    padding:5px;
     right:0;
-    top:-41px
-}
-.slicknav_btn{
-    background-color:transparent;
-    cursor:pointer;
-    margin-bottom:10px;
-    position:relative;
-    z-index:99;
-    border:none;
-    border-radius:3px;
-    top:5px;
-    padding:5px;
     top:-31px
 }
 @media (min-width:768px) and (max-width:992px){
@@ -433,11 +385,6 @@ h3{
 }
 .header-area .main-header-area.sticky{
     width:100%;
-    top:0;
-    left:0;
-    right:0;
-    z-index:99;
-    padding:0 150px;
     background:RGBA(0,0,0,.85);
     box-shadow:0 3px 16px 0 rgba(0,0,0,.1);
 }
@@ -656,8 +603,6 @@ img{
 .slicknav_menu{
     font-size:16px;
     box-sizing:border-box;
-    background:#4c4c4c;
-    padding:5px
 }
 .slicknav_menu *{
     box-sizing:border-box
@@ -676,8 +621,6 @@ img{
 }
 .slicknav_nav{
     color:#fff;
-    margin:0;
-    padding:0;
     font-size:.875em;
     list-style:none;
     overflow:hidden
@@ -739,10 +682,6 @@ img{
 .slicknav_menu .slicknav_menutxt{
     display:none
 }
-.slicknav_menu{
-    background:0 0;
-    margin-top:10px
-}
 .slicknav_menu .slicknav_icon-bar{
     background-color:#fff;
     height:3px;
@@ -767,14 +706,6 @@ img{
 }
 .slicknav_icon-bar{
     background:#fff!important
-}
-.slicknav_nav{
-    background:#fff;
-    float:right;
-    margin-top:0;
-    padding:0;
-    width:100%;
-    border-bottom:1px solid #eee
 }
 .slicknav_nav a:hover{
     background:#f79960 none repeat scroll 0 0;
