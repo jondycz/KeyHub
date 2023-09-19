@@ -756,7 +756,7 @@ body.framed #mainArticleSection{
         padding:10px 10px
     }
 }
-@media (min-width:992px) and (max-width:1200px){
+@media (min-width:992px){
     .header-area .main-header-area{
         padding:0 20px
     }
