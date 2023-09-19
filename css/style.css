@@ -708,6 +708,29 @@ body.framed #mainArticleSection{
     top:-5px;
     padding-bottom:3px
 }
+@media (max-width:768px){
+    .mobile_menu{
+        position:absolute;
+        right:0;
+        width:100%;
+        z-index:9
+    }
+    .slicknav_menu .slicknav_nav a i{
+        display:none
+    }
+    .slicknav_menu{
+        margin-right:0
+    }
+    .header-area{
+        padding-top:0
+    }
+    .header-area .main-header-area .logo-img{
+        text-align:left
+    }
+    .header-area .main-header-area .main-menu ul li a i{
+        display:none!important
+    }
+}
 @media (min-width:768px) and (max-width:992px){
     .slicknav_menu .slicknav_nav a i{
         display:none
@@ -749,33 +772,8 @@ body.framed #mainArticleSection{
 }
 @media (min-width:1200px){
     .header-area .main-header-area{
-        padding:0 10px
+        padding:0 20px
     }
-}
-@media (max-width:768px){
-    .mobile_menu{
-        position:absolute;
-        right:0;
-        width:100%;
-        z-index:9
-    }
-    .slicknav_menu .slicknav_nav a i{
-        display:none
-    }
-    .slicknav_menu{
-        margin-right:0
-    }
-    .header-area{
-        padding-top:0
-    }
-    .header-area .main-header-area .logo-img{
-        text-align:left
-    }
-    .header-area .main-header-area .main-menu ul li a i{
-        display:none!important
-    }
-}
-@media (min-width:1200px) and (max-width:1500px){
     .header-area .main-header-area .main-menu ul li{
         margin-right:15px
     }
