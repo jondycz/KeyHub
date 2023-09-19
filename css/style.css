@@ -94,6 +94,7 @@ h3{
     background:#fff;
     width:95%;
     position:absolute;
+    padding:0;
     left:0;
     right:0;
     margin:auto;
@@ -130,12 +131,6 @@ h3{
     padding-bottom:3px;
     top:-11px;
     right:-5px
-}
-.slicknav_nav .slicknav_arrow{
-    float:right;
-    font-size:22px;
-    position:relative;
-    top:-9px
 }
 .slicknav_btn{
     background-color:transparent;
@@ -577,10 +572,6 @@ img{
 }
 .slicknav_nav li{
     display:block
-}
-.slicknav_nav .slicknav_arrow{
-    font-size:.8em;
-    margin:0 0 0 .4em
 }
 .slicknav_nav .slicknav_item{
     cursor:pointer
