@@ -312,14 +312,12 @@ function KeyFeedback(option){
 //Code executed on full page load
 window.onload = function() {
 	// mobile_menu
-	var menu = $('ul#navigation');
-	if(menu.length){
-		menu.slicknav({
-			prependTo: ".mobile_menu",
-			closedSymbol: '+',
-			openedSymbol:'-'
-		});
-	};
+	document.querySelectorAll(".nav-item.dropdown > .dropdown-menu").forEach(x => {
+		if(x.children.length > 0){
+			x.previousElementSibling.addEventListener("click", function(e){ console.log(e.target.nextElementSibling.classList.toggle('show')); });
+			x.previousElementSibling.removeAttribute("href");
+		}
+	});
 	paintContributors();
 	paintSeasonalLogo();
 };
