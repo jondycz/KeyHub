@@ -289,9 +289,12 @@ body.framed #mainArticleSection{
 /*SCROLLBAR CSS END*/
 
 /*NAVBAR CSS START*/
-header, .navbar.navbar-expand-lg.row > div.show:not(:last-child) {
-	background:RGBA(0,0,0,.9);
-    box-shadow:0 3px 16px 0 rgba(0,0,0,.1);
+header{
+    background:RGBA(0,0,0,.97);
+    box-shadow:0 3px 16px 0 rgba(0,0,0,.3)
+}
+.navbar.navbar-expand-lg.row > div.show:not(:last-child) {
+    background:RGBA(0,0,0,.9)
 }
 header.sticky-top ul li a{
     color:#fff!important;
