@@ -30,6 +30,14 @@ async function paintSeasonalLogo() {
 		}
 	});
 }
+async function loadMainMenu(){
+	document.querySelectorAll(".nav-item.dropdown > .dropdown-menu").forEach(x => {
+		if(x.children.length > 0){
+			x.previousElementSibling.addEventListener("click", function(e){ console.log(e.target.nextElementSibling.classList.toggle('show')); });
+			x.previousElementSibling.removeAttribute("href");
+		}
+	});	
+}
 function loginWithSteam(){
 	var loginLink = '/connect/steam?return=' + encodeURIComponent(location.pathname);
 	if (window.self !== window.top) {
@@ -310,14 +318,8 @@ function KeyFeedback(option){
 //END: Drops page code
 
 //Code executed on full page load
-window.onload = function() {
-	// mobile_menu
-	document.querySelectorAll(".nav-item.dropdown > .dropdown-menu").forEach(x => {
-		if(x.children.length > 0){
-			x.previousElementSibling.addEventListener("click", function(e){ console.log(e.target.nextElementSibling.classList.toggle('show')); });
-			x.previousElementSibling.removeAttribute("href");
-		}
-	});
+document.addEventListener("DOMContentLoaded", function(){
+	loadMainMenu();
 	paintContributors();
 	paintSeasonalLogo();
-};
+});
