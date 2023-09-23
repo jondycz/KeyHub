@@ -58,55 +58,66 @@ function redeemSteamKey(key){
 function VerifyTasks(link, token = 0){
 	document.getElementById("verify").style.display = "none";
 	document.getElementById("VerifLoad").style.display = "block";
-	 $.ajax({     
-		 type: "POST",
-		 url: '/verify?data='+link+'&token='+token,
-		 success: function (data) {
-			 if(data['error'] != "exhausted"){
-				 //server resources exhausted
-				 document.getElementById("verify").title = "Wait 30 seconds to verify again";
-				 document.getElementById("verify").disabled = true;
-				 setTimeout(function(){document.getElementById("verify").disabled = false;$("#verify").removeAttr("title");grecaptcha.reset();},30000);
-				 if(data['code'] != 1){
-					$(".task-result").css("display", "flex");
-					$(".task-result").removeClass( "fa-times-circle" ).addClass("fa-check-circle");
-					$(".taskErrors").css("display", "none");
-				 }
-				if(data['success'] != null){
-					if(data['success'] == true){
+	fetch('/verify?data=' + link + '&token=' + token)
+	.then(response => response.json())
+	.then(data => {
+			if (data['error'] != "exhausted") {
+				//server resources exhausted
+				document.getElementById("verify").title = "Wait 30 seconds to verify again";
+				document.getElementById("verify").disabled = true;
+				setTimeout(function() {
+					document.getElementById("verify").disabled = false;
+					$("#verify").removeAttr("title");
+					grecaptcha.reset();
+				}, 30000);
+				if (data['code'] != 1) {
+					document.querySelectorAll(".task-result").forEach(taskResult => (taskResult.style.display = "flex", taskResult.classList.remove("fa-times-circle"), taskResult.classList.add("fa-check-circle")));
+					document.querySelectorAll(".taskErrors").forEach(taskError => (taskError.style.display = "none"));
+				}
+				if (data['success'] != null) {
+					if (data['success'] == true) {
 						document.getElementById("keybox").setAttribute("value", data["message"]);
 						document.getElementById("keygroup").style.display = "contents";
 						document.getElementById("verifybox").style.display = "none";
-						$('#keysleft').html(($('#keysleft').text())-1);
-					}else{
+						document.getElementById('keysleft').textContent -= 1;
+					} else {
 						document.getElementById("error").style.display = "flex";
 						document.getElementById("errormsg").textContent = data["message"];
 					}
-				}else{
+				} else {
 					//take indexes
 					document.getElementById("error").style.display = "none";
-					$('.taskErrors').hide();
-					$.each(data, function(index, value) {
-						$("#task-"+index).removeClass( "fa-check-circle" ).addClass( "fa-times-circle" );
-						$("#task-"+index+"-reason").css("display", "block");
-						$("#task-"+index+"-reason").text(value);
+					document.querySelectorAll(".taskErrors").forEach(taskError => (taskError.style.display = "none"));
+					Object.keys(data).forEach(function(index) {
+						const taskElement = document.getElementById("task-" + index);
+						const reasonElement = document.getElementById("task-" + index + "-reason");
+
+						if (taskElement) {
+							taskElement.classList.remove("fa-check-circle");
+							taskElement.classList.add("fa-times-circle");
+						}
+
+						if (reasonElement) {
+							reasonElement.style.display = "block";
+							reasonElement.textContent = data[index];
+						}
 					});
 				}
 				document.getElementById("VerifLoad").style.display = "none";
 				document.getElementById("verify").style.display = "initial";
-			 }else{
-				 setTimeout(function(){ VerifyTasks(link, token); }, 2000);
-			 }
-		 },
-		error: function(xhr, ajaxOptions, thrownError) {
-			//hadle errors here
-			alert("We have experienced an error here! Please wait for a while to try verifying again.");
-			document.getElementById("verify").style.display = "initial";
-			document.getElementById("VerifLoad").style.display = "none";
-			grecaptcha.reset();
-		},
-		 dataType: "json"
-	 });	
+			} else {
+				setTimeout(function() {
+					VerifyTasks(link, token);
+				}, 2000);
+			}
+		}
+	)
+	.catch(response => {
+		alert("We have experienced an error here! Please wait for a while to try verifying again.");
+		document.getElementById("verify").style.display = "initial";
+		document.getElementById("VerifLoad").style.display = "none";
+		grecaptcha.reset();
+	});	
 }
 
 function keysleft() {
@@ -133,7 +144,7 @@ if(getPageName(window.location.href) === "giveaway"){
 function videoTask(videoid, data){
 	if(videoid != '' && data != ''){
 		window.data = data;
-		$('<div class="video-underlay"></div><div class="video-overlay"><div id="countdown" style="text-align: right;"></div><div class="video-container"><div id="player" name="player"></div></div></div>').appendTo('body');
+		document.body.insertAdjacentHTML('beforeend', '<div class="video-underlay"></div><div class="video-overlay"><div id="countdown" style="text-align: right;"></div><div class="video-container"><div id="player" name="player"></div></div></div>');
 		window.videoid = videoid;
 		playvideo();
 	}
@@ -184,7 +195,7 @@ function onPlayerReady(event) {
 			if(duration > 59){
 				duration = Math.floor((duration/60)).toFixed(0)+":"+('0' + duration%60).slice(-2);
 			}
-			$("#countdown").html(duration);
+			document.getElementById("countdown").innerHTML = duration;
 		}, 1000)					
 		var last = 0;
 		function videoCheck(){
@@ -199,9 +210,8 @@ function onPlayerReady(event) {
 							player.destroy();
 							player = null;				
 						}
-						$(".video-overlay").remove();
-						$(".video-underlay").remove();
-						$.get('/away?data='+window.data, function (data, textStatus, jqXHR) {});
+						document.querySelectorAll(".video-overlay, .video-underlay").forEach(el => el.remove());
+						fetch('/away?data=' + window.data);
 					}else{
 						last = player.getCurrentTime();
 					}
@@ -216,8 +226,7 @@ function onPlayerReady(event) {
 					player.destroy();
 					player = null;				
 				}
-				$(".video-overlay").remove();
-				$(".video-underlay").remove();
+				document.querySelectorAll(".video-overlay, .video-underlay").forEach(el => el.remove());
 				console.log("Error loading video");*/
 			}
 		}
