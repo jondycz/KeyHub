@@ -67,7 +67,7 @@ function VerifyTasks(link, token = 0){
 				document.getElementById("verify").disabled = true;
 				setTimeout(function() {
 					document.getElementById("verify").disabled = false;
-					$("#verify").removeAttr("title");
+					document.getElementById("verify")?.removeAttribute("title");
 					grecaptcha.reset();
 				}, 30000);
 				if (data['code'] != 1) {
