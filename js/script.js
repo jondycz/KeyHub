@@ -33,7 +33,7 @@ async function paintSeasonalLogo() {
 async function loadMainMenu(){
 	document.querySelectorAll(".nav-item.dropdown > .dropdown-menu").forEach(x => {
 		if(x.children.length > 0){
-			x.previousElementSibling.addEventListener("click", function(e){ console.log(e.target.nextElementSibling.classList.toggle('show')); });
+			x.previousElementSibling.addEventListener("click", function(e){e.target.nextElementSibling.classList.toggle('show')});
 			x.previousElementSibling.removeAttribute("href");
 		}
 	});	
