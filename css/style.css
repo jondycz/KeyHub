@@ -3,7 +3,8 @@
     --primary-color: #fd8500;
     --secondary-color: #fff;
     --primary-bg-color: #202227;
-    --secondary-bg-color: #666;	
+    --secondary-bg-color: #0a0a0c;
+    --tertiary-bg-color: #666;
 }
 html, body{
     overflow-x:clip;
@@ -220,10 +221,10 @@ ins.adsbygoogle[data-ad-status=unfilled]{
     }
 }
 .gaTable .row:nth-child(2n){
-    background-color:var(--primary-bg-color)
+    background-color:var(--secondary-bg-color)
 }
 .gaTable .row:nth-child(odd){
-    background-color:var(--secondary-bg-color)
+    background-color:var(--primary-bg-color)
 }
 .friendPlayerLevel{
     height:32px;
@@ -275,7 +276,7 @@ body.framed #mainArticleSection{
     border-radius:5px
 }
 ::-webkit-scrollbar-track{
-    background:var(--secondary-bg-color);
+    background:var(--tertiary-bg-color);
     border:0 none var(--secondary-color);
     border-radius:50px
 }
