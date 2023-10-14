@@ -96,8 +96,7 @@ h3{
     border-top:0;
     border-radius:5px;
     color:var(--secondary-color);
-    background-color:RGBA(0,0,0,.85);
-    background-color:#000000b2;
+    background-color:var(--secondary-bg-color);
     overflow-wrap:break-word;
     margin-bottom:12vh;
     position: relative;
@@ -113,8 +112,7 @@ h3{
     }
 }
 footer{
-    background-color:RGBA(0,0,0,.85);
-    background-color:#000000b2;
+    background-color:var(--secondary-bg-color);
     color:var(--secondary-color);
     margin-top:auto
 }
