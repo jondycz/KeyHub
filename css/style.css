@@ -1,50 +1,46 @@
 /*CUSTOM CSS START*/
+:root {
+    --primary-color: #fd8500;
+    --secondary-color: #fff;
+    --primary-bg-color: #202227;
+    --secondary-bg-color: #666;	
+}
 html, body{
     overflow-x:clip;
+}
+a, img{
+    -webkit-user-drag: none;
+}
+.pointer{
+    cursor: pointer;
 }
 body{
     font-weight:400;
     font-style:normal;
-    background-color:#202227;
+    background-color:var(--primary-bg-color);
     font-family:-apple-system,BlinkMacSystemFont,montserrat,Roboto,"Segoe UI","Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
     min-height:100vh;
     padding-bottom:0px!important;
     display:flex;
     flex-direction:column;
 }
-.pointer{
-	cursor: pointer;
-}
+
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6,.btn{
     font-weight: 600;
 }
 .img{
     max-width:100%;
-    -webkit-transition:.3s;
-    -moz-transition:.3s;
-    -o-transition:.3s;
-    transition:.3s
-}
-.button,a{
-    -webkit-transition:.3s;
-    -moz-transition:.3s;
-    -o-transition:.3s;
-    transition:.3s
 }
 .button:focus,a:focus,button:focus{
     text-decoration:none;
     outline:0
 }
 a:focus{
-    color:#fff;
+    color:var(--secondary-color);
     text-decoration:none
 }
-.footer -menu li a:hover,.portfolio-cat a:hover,a:focus,a:hover{
-    text-decoration:none!important;
-    color:#1f1f1f
-}
 a,button{
-    color:#fff;
+    color:var(--secondary-color);
     outline:medium none
 }
 h1 a,h2 a,h3 a,h4 a,h5 a,h6 a{
@@ -54,7 +50,7 @@ p{
     font-size:16px;
     font-weight:300;
     line-height:28px;
-    color:#fff;
+    color:var(--secondary-color);
     margin-bottom:13px
 }
 label{
@@ -64,27 +60,27 @@ label{
     font-weight:400
 }
 ::-moz-selection{
-    background:#fd8500;
-    color:#fff;
+    background:var(--primary-color);
+    color:var(--secondary-color);
     text-shadow:none
 }
 ::selection{
-    background:#fd8500;
-    color:#fff;
+    background:var(--primary-color);
+    color:var(--secondary-color);
     text-shadow:none
 }
 ::-webkit-input-placeholder{
-    color:#fd8500;
+    color:var(--primary-color);
     font-size:14px;
     opacity:1
 }
 :-ms-input-placeholder{
-    color:#fd8500;
+    color:var(--primary-color);
     font-size:14px;
     opacity:1
 }
 ::placeholder{
-    color:#fd8500;
+    color:var(--primary-color);
     font-size:14px;
     opacity:1
 }
@@ -95,10 +91,10 @@ h3{
     font-size:24px
 }
 #mainArticleSection{
-    border:solid #fd8500;
+    border:solid var(--primary-color);
     border-top:0;
     border-radius:5px;
-    color:#fff;
+    color:var(--secondary-color);
     background-color:RGBA(0,0,0,.85);
     background-color:#000000b2;
     overflow-wrap:break-word;
@@ -106,7 +102,7 @@ h3{
     position: relative;
 }
 .textArticleHeader{
-    color:#fd8500;
+    color:var(--primary-color);
     font-size:48px;
     margin-bottom:5%
 }
@@ -118,12 +114,12 @@ h3{
 footer{
     background-color:RGBA(0,0,0,.85);
     background-color:#000000b2;
-    color:#fff;
+    color:var(--secondary-color);
     margin-top:auto
 }
 a,button,h2{
     text-decoration:none;
-    color:#fd8500
+    color:var(--primary-color);
 }
 .level{
     vertical-align:middle;
@@ -141,10 +137,10 @@ img{
     max-width:100%
 }
 .submenu li a:hover{
-    color:#fd8500!important
+    color:var(--primary-color)!important
 }
 .row>div>a>span{
-    color:#fff
+    color:var(--secondary-color);
 }
 .task{
     border-bottom:solid 2px #fd8500;
@@ -172,7 +168,7 @@ img{
     top:50%;
     left:50%;
     transform:translate(-50%,-50%);
-    color:#fff;
+    color:var(--secondary-color);
     z-index:1000
 }
 @media (max-width:1100px){
@@ -197,7 +193,7 @@ img{
     margin:25px 0;
     height:1px;
     background:#000;
-    background:-webkit-gradient(linear,0 0,100% 0,from(#0a0a0c),to(#0a0a0c),color-stop(50%,#fd8500))
+    background:-webkit-gradient(linear,0 0,100% 0,from(var(--primary-bg-color)),to(var(--primary-bg-color)),color-stop(50%,var(--primary-color)))
 }
 ins.adsbygoogle[data-ad-status=unfilled]{
     display:none!important
@@ -224,10 +220,10 @@ ins.adsbygoogle[data-ad-status=unfilled]{
     }
 }
 .gaTable .row:nth-child(2n){
-    background-color:#0a0a0c
+    background-color:var(--primary-bg-color)
 }
 .gaTable .row:nth-child(odd){
-    background-color:#202227
+    background-color:var(--secondary-bg-color)
 }
 .friendPlayerLevel{
     height:32px;
@@ -274,13 +270,13 @@ body.framed #mainArticleSection{
     height:0
 }
 ::-webkit-scrollbar-thumb{
-    background:#fd8500;
-    border:0 none #fff;
+    background:var(--primary-color);
+    border:0 none var(--secondary-color);
     border-radius:5px
 }
 ::-webkit-scrollbar-track{
-    background:#666;
-    border:0 none #fff;
+    background:var(--secondary-bg-color);
+    border:0 none var(--secondary-color);
     border-radius:50px
 }
 ::-webkit-scrollbar-corner{
@@ -297,20 +293,20 @@ header{
     background:RGBA(0,0,0,.9)
 }
 header.sticky-top ul li a{
-    color:#fff!important;
+    color:var(--secondary-color)!important;
     padding:0 0 10px 0;
     position:relative
 }
 header.sticky-top ul li a.active {
-    color:#fd8500!important
+    color:var(--primary-color)!important
 }
 header.sticky-top ul li a:hover{
-    color:#fd8500!important
+    color:var(--primary-color)!important
 }
 header.sticky-top ul li a::before{
     position:absolute;
     content:"";
-    background:#fd8500;
+    background:var(--primary-color);
     width:100%;
     height:2px;
     bottom:0;
@@ -341,13 +337,13 @@ header.sticky-top .dropdown-menu li{
     padding:12px 26px;
     font-size:18px;
     font-weight:400;
-    border:1px solid #fd8500;
-    color:#fd8500;
+    border:1px solid var(--primary-color);
+    color:var(--primary-color);
     border-radius:30px
 }
 .book_btn a:hover{
-    background:#fd8500;
-    color:#fff;
-    border:1px solid #fd8500
+    background:var(--primary-color);
+    color:var(--secondary-color);
+    border:1px solid var(--primary-color)
 }
 /*NAVBAR CSS END*/
