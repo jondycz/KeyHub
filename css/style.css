@@ -192,7 +192,7 @@ img{
     margin:25px 0;
     height:1px;
     background:#000;
-    background:-webkit-gradient(linear,0 0,100% 0,from(var(--primary-bg-color)),to(var(--primary-bg-color)),color-stop(50%,var(--primary-color)))
+    background:-webkit-gradient(linear,0 0,100% 0,from(RGBA(0,0,0,0)),to(RGBA(0,0,0,0)),color-stop(50%,var(--primary-color)))
 }
 ins.adsbygoogle[data-ad-status=unfilled]{
     display:none!important
