@@ -288,6 +288,9 @@ header{
     background:RGBA(0,0,0,.97);
     box-shadow:0 3px 16px 0 rgba(0,0,0,.3)
 }
+.pointer:hover + .dropdown-menu, .dropdown-menu:hover {
+    display:block;
+}
 .navbar.navbar-expand-lg.row > div.show:not(:last-child) {
     background:RGBA(0,0,0,.9)
 }
@@ -327,7 +330,7 @@ header.sticky-top .dropdown-menu li{
     padding-top:15px;
 }
 @media only screen and (min-width:992px){
-    header.sticky-top .dropdown-menu.show{
+    header.sticky-top .dropdown-menu{
         background: RGBA(0,0,0,.9);
     }
 }
