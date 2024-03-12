@@ -1,14 +1,14 @@
-(function() {
+(() => {
   // Get the attributes from the script tag
-  var scriptTag = document.querySelector('script[data-gid]');
-  var gid = scriptTag.getAttribute('data-gid');
-  var width = scriptTag.getAttribute('data-width') || 500;
-  var classes = scriptTag.getAttribute('data-class') || "khembed";
-  var styles = scriptTag.getAttribute('data-style') || "";
-  var attributes = scriptTag.getAttribute('data-attributes') || "";
+  let scriptTag = document.currentScript;
+  let gid = scriptTag.attributes['data-gid']?.value;
+  let width = scriptTag.attributes['data-width']?.value || 500;
+  let classes = scriptTag.attributes['data-class']?.value || "khembed";
+  let styles = scriptTag.attributes['data-style']?.value || "";
+  let attributes = scriptTag.attributes['data-attributes']?.value || "";
 
   // Create the iframe
-  var iframe = document.createElement('iframe');
+  let iframe = document.createElement('iframe');
   iframe.src = 'https://key-hub.eu/giveaway/' + gid;
 
   // Set the width of the iframe
