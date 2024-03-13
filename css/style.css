@@ -189,10 +189,11 @@ img{
     z-index:1
 }
 .sexy_line{
-    margin:25px 0;
+    border:0;
+    opacity:1;
     height:1px;
-    background:#000;
-    background:-webkit-gradient(linear,0 0,100% 0,from(RGBA(0,0,0,0)),to(RGBA(0,0,0,0)),color-stop(50%,var(--primary-color)))
+    margin:25px 0;
+    background-image:linear-gradient(to right, RGBA(0,0,0,0), var(--primary-color), RGBA(0,0,0,0))
 }
 ins.adsbygoogle[data-ad-status=unfilled]{
     display:none!important
